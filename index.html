@@ -18,7 +18,13 @@
   <section class="clase4">
     <h2>Clase 4</h2>
     <div id="appCuatro">
+      <!--evento: v-on:click, sirve para mostrar es el evento de hacer algo-->
+      <!-- <button v-on:click="mostrarTextoEnConsola">MOSTRAR TEXTO</button> -->
+      <button @click="mostrarTextoEnConsola">MOSTRAR TEXTO</button>
       
+      <!--evento: v-on:keyup.13="enviar", sirve para enviar en este caso pero cuando se coloca y recien se levanta el dedo del la tecla, alli cumple con el evento-->
+      <!-- <input type="text" v-on:keyup.enter="enviar" v-model="email"> -->
+      <input type="text" @keyup.enter="enviar" v-model="email">
     </div>
   </section>
 
