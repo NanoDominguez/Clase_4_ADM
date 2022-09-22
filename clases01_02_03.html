@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Clases ADM</title>
+  <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h1>Clases de Aplicaciones para Dispositivos Móviles</h1>
+  </header>
+
+  <section class="clase1">
+    <h2>Clase 1</h2>
+    <div id="app">
+        <!--v-once, con esta directiva modificas la variable de la consola, pero no cambien el mensaje en la vista renderizada-->
+        <p v-once>{{ message }}</p>
+        <!--v-show, con esta directiva, se renderizaba y mostraba algo en la vista, pero cuando se esconde, coloca un "displa:none;"-->
+        <button v-show="mostrarBoton ">Enviar mensaje</button>
+    
+        <hr class="interno"/>
+        <!--v-bind, es una directiva que permite-->
+        <div style="border: 1px solid #000;" v-bind:class="!estaChequeado ? 'hayUnError' : 'estaBien'">
+            <p>Comodín</p>
+            <!--v-html, es una directiva que permite colocar código htyml in-line-->
+            <div v-html="codigoHtml"> </div>  
+            <!--v-model, es la directiva permite actualizar automaticanente los valores, como ser ahora el checkbox-->
+            
+        </div>
+        <input type="checkbox" v-model="estaChequeado" />
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="clase2">
+    <h2>Clase 2</h2>
+    <div id="appDos">
+      <!--v-once, con esta directiva modificas la variable de la consola, pero no cambien el mensaje en la vista renderizada-->
+      <p v-once>{{ message }}</p>
+      <!--v-show, con esta directiva, se renderizaba y mostraba algo en la vista, pero cuando se esconde, coloca un "displa:none;"-->
+      <button v-show="mostrarBoton ">Enviar mensaje</button>
+    
+      <hr />
+      <!--v-bind, es una directiva que permite agregar una modificacion de la clase en funcion al checkbox -->
+      <div style="border: 1px solid #000;" v-bind:class="!estaChequeado ? 'hayUnError' : 'estaBien'">
+        <p>Comodín</p>
+        <!--v-html, es una directiva que permite colocar código htyml in-line-->
+        <div v-html="codigoHtml"> </div>  
+        <!--v-model, es la directiva permite actualizar automaticanente los valores, como ser ahora el checkbox-->
+            
+      </div>
+      <input type="checkbox" v-model="estaChequeado" />
+      <!--v-if, es la directiva que se encarga de omitir el elementos a nivel de DOM-->
+      <button v-if="mostrarBoton ">Enviar mensaje</button>
+        
+    </div>
+  </section>
+  
+  <hr>
+
+  <section class="clase3">
+    <h2>Clase 3</h2>
+    <div id="appTres">
+      <h2>Contador</h2>
+      <!--Ejemplo con v-if-->
+      <div class="contadorContainer">
+        <p v-if="contador > 5"> El contador es mayor a cinco.({{contador}})</p>
+        <p v-if="contador == 5"> El contador es cinco.({{contador}})</p>
+        <p v-if="contador < 5"> El contador es menor a cinco.({{contador}})</p>
+      </div> 
+      
+      <!--Ejemplo con v-show-->
+      <div class="contadorContainer">
+        <p v-show="contador > 5"> El contador es mayor a cinco.({{contador}})</p>
+        <p v-show="contador == 5"> El contador es cinco.({{contador}})</p>
+        <p v-show="contador < 5"> El contador es menor a cinco.({{contador}})</p>
+      </div>
+
+      <!--v-else, esta directiva que n o tiene valor y se coloca dentro de la etiqueta del elemento-->
+      <!--v-for, nos permite iterar (recorrer y devolver un valor) -->
+      <div class="listaContenedor">
+
+        <h2>Lista de Elementos Renderizada sin usar Template</h2>
+        <ul>
+          <li v-for ="item in listasDeElementos"> 
+            Si queres hablar con alguien de {{item.texto}}, nombralo como {{item.aclaracion}} y no te olvides de agregar el código de área: {{item.codigoArea}}.
+          </li>
+        </ul>
+
+        <h2>Lista de Elementos Renderizada usnado Template</h2>
+
+        <ul><!--El uso de template, es para que se respeten los "li" en html, se usa cuando varios elementos juntos a la vez se renderizan-->
+          <template v-for ="(item, index) in listasDeElementos"> <!--Uso exclusivo de Vue-->
+            <li> 
+              [{{index}}] Si queres hablar con alguien de {{item.texto}}, nombralo como {{item.aclaracion}} 
+            </li>
+            <li> 
+              [{{index}}] y no te olvides de agregar el código de área: {{item.codigoArea}}.
+            </li>
+            <ul><!--v-for con of, recorriendo un objeto-->
+              <li v-for="(value, key) of item">{{key}}: {{value}}</li>
+            </ul>
+          </template> 
+         
+
+          <!--Ejemplo con v-bind:key-->
+          <ul>
+            <li v-for ="item in listasDeElementos" :key="item.id" v-if="!(item.texto === 'Argentina')" > 
+              Si queres hablar con alguien de {{item.texto}}, nombralo como {{item.aclaracion}} y no te olvides de agregar el código de área: {{item.codigoArea}}.
+            </li>
+          </ul>
+          
+        </ul>
+      </div>
+    </div>
+    
+  </section>
+
+
+
+
+  <script src=" script.js">
+  </script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>
