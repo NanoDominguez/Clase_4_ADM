@@ -29,6 +29,12 @@
       <!-- directiva bi-direccional -->
       <input type="email" @keyup.enter="enviar" v-model="email">
 
+      <!--Se renderiza la lista de emails-->
+      <ul>
+        <li v-for="email in listaEmails">
+          {{email}}
+        </li>
+      </ul>
       <button @click="agregarEmail">AGREGAR EMAIL</button>      
     </div>
   </section>
