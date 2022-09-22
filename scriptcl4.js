@@ -5,6 +5,7 @@ var appCuatro = new Vue({
     contador: 0,
     listasDeElementos : [],
     email:'',
+    listaEmails: [],/*Se crea una lista de email como data */
   },
   methods: {
     //agregarTexto: function() {...},
@@ -15,5 +16,9 @@ var appCuatro = new Vue({
     enviar: function() {
        alert("Estamos enviando");
     },
+    agregarEmail: function() {
+      this.listaEmails.push(this.email);
+      this.email = "";//se resetea porque es bidireccional el codigo
+    }/*Se crea un metodo que se llama "agrgarEmail", que agarra a la lista de emails y pushea lo que tiene email, despues se renderiza en HTML */
   }
 });

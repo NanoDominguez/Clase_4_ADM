@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Clases ADM</title>
+  <!-- versión de desarrollo, incluye advertencias de ayuda en la consola -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+    <h1>Clases de Aplicaciones para Dispositivos Móviles</h1>
+  </header>
+
+  <section class="clase4">
+    <h2>Clase 4</h2>
+    <div id="appCuatro">
+      <!--evento: v-on:click, sirve para mostrar es el evento de hacer algo-->
+      <!-- <button v-on:click="mostrarTextoEnConsola">MOSTRAR TEXTO</button> -->
+      <!-- <button @click="mostrarTextoEnConsola">MOSTRAR TEXTO</button> -->
+      
+      <!--evento: v-on:keyup.13="enviar", sirve para enviar en este caso pero cuando se coloca y recien se levanta el dedo del la tecla, alli cumple con el evento-->
+      <!-- <input type="text" v-on:keyup.enter="enviar" v-model="email"> -->
+      <!-- <input type="text" @keyup.enter="enviar" v-model="email"> -->
+      <!-- directiva bi-direccional -->
+      <input type="email" @keyup.enter="enviar" v-model="email">
+
+      <p>{{listaEmails}}</p><!--Se renderiza la lista de emails-->
+      <button @click="agregarEmail">AGREGAR EMAIL</button>      
+    </div>
+  </section>
+
+  <script src=" scriptcl4.js">
+  </script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>
