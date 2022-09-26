@@ -28,6 +28,7 @@
       <!-- <input type="text" @keyup.enter="enviar" v-model="email"> -->
       <!-- directiva bi-direccional -->
       <input type="email" @keyup.enter="enviar" v-model="email">
+      <button @click="agregarEmail" type="button" class="btn btn-outline-primary btn-sm">AGREGAR EMAIL</button>    
 
       <!--Se renderiza la lista de emails-->
       <ul>
