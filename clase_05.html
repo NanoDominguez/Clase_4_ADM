@@ -41,7 +41,8 @@
           </div>
         </li>
       </ul>
-      <button @click="agregarEmail">AGREGAR EMAIL</button>      
+      <!-- Con vi-if, hacemos que aparezca el boton, despues de determinada cantidad de mails -->
+      <button v-if="listaEmails.length >= 5" @click="agregarEmail" type="button" class="btn btn-outline-success btn-sm">ENVIAR MAIL MASIVOS</button>
     </div>
   </section>
 
