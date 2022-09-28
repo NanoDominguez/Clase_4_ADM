@@ -29,7 +29,7 @@
       <!-- directiva bi-direccional -->
       <input type="email" @keyup.enter="enviar" v-model="email">
       <button @click="agregarEmail" type="button" class="btn btn-outline-primary btn-sm">AGREGAR EMAIL</button>    
-
+      <button @click="eliminarEmail" type="button" class="btn btn-outline-danger btn-sm">ELIMINAR EMAIL</button>    
       <!--Se renderiza la lista de emails-->
       <ul>
         <li v-for="email in listaEmails" style="list-style:none ;">
