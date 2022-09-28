@@ -22,6 +22,9 @@ var appCinco= new Vue({
     },/*Se crea un metodo que se llama "agrgarEmail", que agarra a la lista de emails y pushea lo que tiene email, despues se renderiza en HTML */
     limpiarListaEmails: function() {
       this.listaEmails = [];
+    },
+    eliminarEmail: function() {
+      
     }
   }
 });
